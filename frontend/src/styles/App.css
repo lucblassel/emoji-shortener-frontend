@@ -1,0 +1,163 @@
+
+@font-face {
+  font-family: 'VulfItalic';
+  src: local('VulfItalic'), url(../fonts/VulfMonoDemo-Italic.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'VulfBoldItalic';
+  src: local('VulfBoldItalic'), url(../fonts/VulfMonoDemo-BoldItalic.otf) format('opentype');
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.pageContainer {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'VulfItalic';
+}
+
+.mainBody {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageFooter {
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageFooter img {
+  margin-left: 0.5rem;
+}
+
+.pageFooter a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageTitle a {
+  color: #0070f3;
+  text-decoration: none;
+  font-family: 'VulfBoldItalic';
+}
+
+.pageTitle a:hover,
+.pageTitle a:focus,
+.pageTitle a:active {
+  text-decoration: underline;
+}
+
+.pageTitle {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.titleEmojis {
+  font-size: 400%;
+}
+
+.pageTitle,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.addressGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.card {
+  width: 100%;
+  margin: 0.5rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  text-decoration: underline solid;
+}
+
+.card h3 {
+  margin: 0.1rem;
+  font-size: 1.2rem;
+}
+
+
+.footerLogo {
+  height: 1em;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+  }
+}
