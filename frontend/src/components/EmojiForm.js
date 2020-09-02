@@ -5,6 +5,9 @@ import * as Yup from "yup";
 import "../styles/Form.css";
 
 const emojiRegex = /.*(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+.*/;
+// const filedStyle = {
+//   fontFamily
+// }
 
 const API_url = process.env.API_URL || "http://localhost:4000/api";
 const headers = { "content-type": "application/json" };
@@ -31,7 +34,7 @@ function populateMessage(values) {
     `;
   } else {
     message.innerHTML = `
-      <span>Your link: </span> <br />
+      <span>Your link: </span>
       <a href=${values.url}>${values.display}</a>
     `;
   }
@@ -69,7 +72,7 @@ const EmojiForm = () => {
             })
             .then((data) => {
               let url = `/${data.emojis}`;
-              let display = `emojis.lucblassel.com/${data.raw}`;
+              let display = `emoj.yt/${data.raw}`;
               populateMessage({
                 url: url,
                 display: display,
@@ -82,21 +85,27 @@ const EmojiForm = () => {
             });
         }}
       >
-        <Form>
+        <Form style={{ backgroundColodsr: "beige", width: "100%" }}>
           <div className="formContainer">
             <div className="fieldContainer">
               <label htmlFor="url">URL</label>
               <Field name="url" type="url" placeholder="url.domain.tld" />
-              <ErrorMessage name="url" />
+              <ErrorMessage name="url">
+                {(msg) => <div className="errorMessage">{msg}</div>}
+              </ErrorMessage>
             </div>
             <div className="fieldContainer">
               <label htmlFor="emojis">emojis</label>
               <Field name="emojis" type="text" placeholder="emojis here..." />
-              <ErrorMessage name="emojis" />
+              <ErrorMessage name="emojis">
+                {(msg) => <div className="errorMessage">{msg}</div>}
+              </ErrorMessage>
             </div>
-            <button type="submit" id="submitButton">
-              Submit
-            </button>
+            <div className="buttonContainer">
+              <button type="submit" id="submitButton">
+                Submit
+              </button>
+            </div>
           </div>
         </Form>
       </Formik>
