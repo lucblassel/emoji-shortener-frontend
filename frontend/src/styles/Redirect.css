@@ -1,0 +1,41 @@
+
+.content {
+    font-size: larger;
+    margin: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.contentItem {
+    margin: 1rem;
+}
+
+.description {
+    width: 50%;
+    font-size: small;
+}
+
+.backButton {
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    font-size: x-large;
+    font-weight: bold;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+}
+
+.backButton:hover {
+    border-color: darkgray;
+}
+
+.backButton a {
+    text-decoration: none;
+    color: black;
+}
+
+.backButton span {
+    font-size: xx-large;
+    text-decoration: none;
+}

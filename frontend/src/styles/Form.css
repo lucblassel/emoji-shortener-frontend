@@ -1,0 +1,71 @@
+
+.formContainer {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* height: 8rem; */
+}
+
+.fieldContainer {
+    margin: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.fieldContainer label {
+    padding-right: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: large;
+}
+
+.fieldContainer input {
+    font-size: small;
+    font-family: 'VulfItalic';
+    padding: 0.3rem;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: normal;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    font-family: 'VulfItalic';
+    font-size: large;
+    color: black;
+    border: solid 2px lightgray;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.5s;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+button:hover {
+    background-color: rgb(160, 160, 160);
+    color: white;
+}
+
+button:active {
+    background-color: rgb(104, 104, 104);
+}
+
+#validationMessage {
+    background-color: azure;
+    margin-top: 3rem;
+    font-size: larger;
+}
