@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36c6b14a.chunk.css",
+    "main.js": "/static/js/main.c17a1d95.chunk.js",
+    "main.js.map": "/static/js/main.c17a1d95.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c8a21426.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c8a21426.js.map",
+    "static/js/2.06258ec8.chunk.js": "/static/js/2.06258ec8.chunk.js",
+    "static/js/2.06258ec8.chunk.js.map": "/static/js/2.06258ec8.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.eba4b8f3653a9f341734a42d44e81776.js": "/precache-manifest.eba4b8f3653a9f341734a42d44e81776.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.36c6b14a.chunk.css.map": "/static/css/main.36c6b14a.chunk.css.map",
+    "static/js/2.06258ec8.chunk.js.LICENSE.txt": "/static/js/2.06258ec8.chunk.js.LICENSE.txt",
+    "static/media/Home.css": "/static/media/VulfMonoDemo-Italic.b7748c52.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c8a21426.js",
+    "static/js/2.06258ec8.chunk.js",
+    "static/css/main.36c6b14a.chunk.css",
+    "static/js/main.c17a1d95.chunk.js"
+  ]
+}
