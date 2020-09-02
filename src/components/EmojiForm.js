@@ -5,7 +5,7 @@ import "../styles/Form.css";
 
 const emojiRegex = /.*(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+.*/;
 
-const API_url = process.env.API_URL || "http://localhost:4000/api";
+const API_url = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
 const headers = { "content-type": "application/json" };
 const params = {
   headers: headers,
