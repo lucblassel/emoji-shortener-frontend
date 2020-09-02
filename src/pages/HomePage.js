@@ -28,17 +28,6 @@ class HomePage extends React.Component {
           <p className="description">encode urls as emoji strings!</p>
           <EmojiForm />
 
-          <div>
-            {Object.keys(process.env).map((key) => {
-              return (
-                <div key={key}>
-                  <div>Key: {key} </div>
-                  <div>Value: {process.env[key]} </div>
-                </div>
-              );
-            })}
-          </div>
-
           <div className="addressGrid">
             <h2>Latest entries: </h2>
             {this.state.addresses.map((doc) => {

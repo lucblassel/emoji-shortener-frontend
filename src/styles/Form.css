@@ -65,7 +65,6 @@ button:active {
 }
 
 #validationMessage {
-    background-color: azure;
     margin-top: 3rem;
     font-size: larger;
 }
