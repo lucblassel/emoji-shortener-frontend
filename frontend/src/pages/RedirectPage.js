@@ -1,6 +1,7 @@
 import React from "react";
 import { getUnique } from "../lib/getURLs.js";
 import Footer from "../components/Footer.js";
+import Title from "../components/Title.js";
 import "../styles/Redirect.css";
 
 class RedirectPage extends React.Component {
@@ -24,11 +25,7 @@ class RedirectPage extends React.Component {
       <div className="pageContainer">
         <div className="mainBody">
           <div className="header">
-            <h1 className="pageTitle">
-              <span role="img">🌊</span>
-              <span role="img">👺</span> emoj.yt <span role="img">👺</span>
-              <span role="img">🌊</span>
-            </h1>
+            <Title/>
           </div>
           <div className="content">
             <div className="contentItem">
@@ -42,7 +39,7 @@ class RedirectPage extends React.Component {
             </div>
           </div>
           <div className="backButton">
-            <a href="/"> return <span>🏡</span></a>
+            <a href="/"> return <span role="img" aria-label="home-image">🏡</span></a>
           </div>
           <div className="description">
             <h4>Why am I seeing this page?</h4>

@@ -1,6 +1,7 @@
 import React from "react";
 import EmojiForm from "../components/EmojiForm.js";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.js";
+import Title from "../components/Title.js";
 import { getAll } from "../lib/getURLs";
 import "../styles/Home.css";
 
@@ -23,14 +24,9 @@ class HomePage extends React.Component {
       return (
         <div className="pageContainer">
           <main className="mainBody">
-            <h1 className="pageTitle">
-              <span role="img">🌊</span>
-              <span role="img">👺</span> emoj.yt <span role="img">👺</span>
-              <span role="img">🌊</span>
-            </h1>
-  
+
+            <Title/>
             <p className="description">encode urls as emoji strings!</p>
-  
             <EmojiForm />
   
             <div className="addressGrid">

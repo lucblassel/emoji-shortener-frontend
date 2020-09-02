@@ -1,0 +1,16 @@
+.pageTitle {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  display: flex;
+}
+
+.titleEmojis {
+  font-size: 400%;
+}
+
+@media (max-width: 600px) {
+    .pageTitle {
+      flex-direction: column;
+    }
+  }

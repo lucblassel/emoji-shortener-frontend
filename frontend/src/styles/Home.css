@@ -28,28 +28,6 @@
   align-items: center;
 }
 
-.pageTitle a {
-  color: #0070f3;
-  text-decoration: none;
-  font-family: 'VulfBoldItalic';
-}
-
-.pageTitle a:hover,
-.pageTitle a:focus,
-.pageTitle a:active {
-  text-decoration: underline;
-}
-
-.pageTitle {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.titleEmojis {
-  font-size: 400%;
-}
-
 .pageTitle,
 .description {
   text-align: center;

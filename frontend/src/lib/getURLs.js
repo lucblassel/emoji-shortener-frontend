@@ -1,8 +1,12 @@
 
-const API_url = process.env.API_URL || "http://localhost:4000/api";
-const headers = new Headers();
+require('dotenv').config();
+
+const API_url = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
+// const headers = new Headers({"Access-Control-Allow-Origin":"*"});
 const params = {
-  headers: headers,
+  headers: {
+    'Access-Control-Allow-Origin':'*'
+  },
   mode: "cors",
   cache: "default",
 };

@@ -1,13 +1,9 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
-import styled from "styled-components";
 import * as Yup from "yup";
 import "../styles/Form.css";
 
 const emojiRegex = /.*(\u00a9|\u00ae|[\u2000-\u3300]|\ud83c[\ud000-\udfff]|\ud83d[\ud000-\udfff]|\ud83e[\ud000-\udfff])+.*/;
-// const filedStyle = {
-//   fontFamily
-// }
 
 const API_url = process.env.API_URL || "http://localhost:4000/api";
 const headers = { "content-type": "application/json" };
