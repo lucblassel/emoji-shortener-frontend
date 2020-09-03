@@ -59,29 +59,39 @@ const EmojiForm = () => {
               if (response.ok) {
                 return response.json();
               } else if (response.status === 429) {
-                populateMessage({
+                return {
+                  raw: "",
+                  emojis: "",
                   message: "You are submitting too fast.",
-                });
+                };
+              } else if (response.status === 500) {
+                return {
+                  raw: "",
+                  emojis: "",
+                  message: "Oops, that didn't work. \n Try another emoji string?",
+                };
               } else {
                 throw Error(response.error);
               }
             })
             .then((data) => {
-              let url = `/${data.emojis}`;
-              let display = `emoj.yt/${data.raw}`;
-              populateMessage({
-                url: url,
-                display: display,
-              });
+              let obj = {
+                url: `/${data.emojis}`,
+                display: `emoj.yt/${data.raw}`,
+              };
+              if (data.message) {
+                obj.message = data.message;
+              }
+              populateMessage(obj);
               enableButton();
             })
             .catch((error) => {
-              alert(`${error.message}:\n${error.stack}`);
+              alert(`${error.message}`);
               enableButton();
             });
         }}
       >
-        <Form style={{ backgroundColodsr: "beige", width: "100%" }}>
+        <Form style={{ width: "100%" }}>
           <div className="formContainer">
             <div className="fieldContainer">
               <label htmlFor="url">URL</label>
