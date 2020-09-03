@@ -5,12 +5,12 @@ import Title from "../components/Title.js";
 import LoadingIcon from "../components/LoadingIcon.js";
 import "../styles/Redirect.css";
 
-
+const punycode = require("punycode");
 
 class Content extends React.Component {
   render() {
     if (this.props.notFound) {
-      return (const punycode = require("punycode");
+      return (
         <div className="content">
           <LoadingIcon id="loadingIcon" />
           <h2>Oh no...</h2>
