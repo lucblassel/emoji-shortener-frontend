@@ -5,6 +5,8 @@ import Title from "../components/Title.js";
 import LoadingIcon from "../components/LoadingIcon.js";
 import "../styles/Redirect.css";
 
+const punycode = require("punycode");
+
 class RedirectPage extends React.Component {
   constructor(props) {
     super(props);
@@ -14,11 +16,15 @@ class RedirectPage extends React.Component {
   }
 
   async componentDidMount() {
-    let address = await getUnique(this.props.match.params.id);
+    let id = this.props.match.params.id;
+    let encoded = punycode.encode(id);
+    let queryId = (encoded.slice(0, -1) === id) ? id : encoded;
+    
+    let address = await getUnique(queryId);
     this.setState({
       emojis: address.emojiURL,
       url: address.redirectURL,
-      punycode: this.props.match.params.id,
+      punycode: queryId,
     });
     document.getElementById("loadingIcon").setAttribute(
       "style", "display: none;"

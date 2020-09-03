@@ -9,6 +9,7 @@
     "dotenv": "^8.2.0",
     "formik": "^2.1.5",
     "package.json": "^2.0.1",
+    "punycode": "^2.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
