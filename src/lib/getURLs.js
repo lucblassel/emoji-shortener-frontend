@@ -28,6 +28,9 @@ export async function getAll() {
 export async function getUnique(id) {
   let res = await fetch(`${API_url}/${id}`, { method: "GET", ...params })
     .then((data) => {
+      if (data.status === 404) {
+        return {notFound: true, emojiURL: `httsp://emoj.yt/${id}`, redirectURL:""};
+      }
       if (data.status !== 200) {
           throw new Error(`request error, status code ${data.status}`)
       }
