@@ -2,6 +2,7 @@ import React from "react";
 import EmojiForm from "../components/EmojiForm.js";
 import Footer from "../components/Footer.js";
 import Title from "../components/Title.js";
+import LoadingIcon from "../components/LoadingIcon.js";
 import { getAll } from "../lib/getURLs";
 import "../styles/Home.css";
 
@@ -18,6 +19,9 @@ class HomePage extends React.Component {
     this.setState({
       addresses: addresses,
     });
+    document.getElementById("loadingIcon").setAttribute(
+      "style", "display: none;"
+    )
   }
 
   render() {
@@ -29,6 +33,7 @@ class HomePage extends React.Component {
           <EmojiForm />
 
           <div className="addressGrid">
+            <LoadingIcon id="loadingIcon"/>
             <h2>Latest entries: </h2>
             {this.state.addresses.map((doc) => {
               return (

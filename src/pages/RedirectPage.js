@@ -2,6 +2,7 @@ import React from "react";
 import { getUnique } from "../lib/getURLs.js";
 import Footer from "../components/Footer.js";
 import Title from "../components/Title.js";
+import LoadingIcon from "../components/LoadingIcon.js";
 import "../styles/Redirect.css";
 
 class RedirectPage extends React.Component {
@@ -17,7 +18,11 @@ class RedirectPage extends React.Component {
     this.setState({
       emojis: address.emojiURL,
       url: address.redirectURL,
+      punycode: this.props.match.params.id,
     });
+    document.getElementById("loadingIcon").setAttribute(
+      "style", "display: none;"
+    )
   }
 
   render() {
@@ -28,9 +33,10 @@ class RedirectPage extends React.Component {
             <Title/>
           </div>
           <div className="content">
+            <LoadingIcon id="loadingIcon"/>
             <div className="contentItem">
               This url: <br />
-              <a href={this.state.emojis}>{this.state.emojis}</a>
+              <a href={this.state.punycode}>{this.state.emojis}</a>
             </div>
             <div className="contentItem">
               Should redirect you to:
