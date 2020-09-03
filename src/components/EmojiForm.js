@@ -56,22 +56,25 @@ const EmojiForm = () => {
             body: body,
           })
             .then((response) => {
+              console.log("response", response);
               if (response.ok) {
                 return response.json();
-              } else if (response.status === 429) {
-                return {
-                  raw: "",
-                  emojis: "",
-                  message: "You are submitting too fast.",
-                };
-              } else if (response.status === 500) {
-                return {
-                  raw: "",
-                  emojis: "",
-                  message: "Oops, that didn't work. \n Try another emoji string?",
-                };
               } else {
-                throw Error(response.error);
+                let obj = {raw: "", emojis: ""}
+                switch(response.status) {
+                  case 429:
+                    obj.message = "You are submitting too fast.";
+                    break;
+                  case 444:
+                    obj.message = "Oops, that emoji sequence is already in use...";
+                    break;
+                  case 555:
+                    obj.message = "The emoji string must have at least 1 emoji";
+                    break;
+                  default:
+                    throw Error(response.error)
+                }
+                return obj
               }
             })
             .then((data) => {
