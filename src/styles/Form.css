@@ -68,3 +68,10 @@ button:active {
     margin-top: 3rem;
     font-size: larger;
 }
+
+#emojiPicker {
+    position: relative;
+    top: -2rem;
+    left: 3rem;
+    z-index: 99 !important;
+}

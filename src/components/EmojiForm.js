@@ -1,5 +1,6 @@
-import React from "react";
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import React, { useState } from "react";
+import { Formik, Field, Form, ErrorMessage, FormikProps } from "formik";
+import Picker from "emoji-picker-react";
 import * as Yup from "yup";
 import "../styles/Form.css";
 
@@ -37,6 +38,22 @@ function populateMessage(values) {
 }
 
 const EmojiForm = () => {
+  const [emojiString, setEmojiString] = useState("");
+  const [isPickerHidden, setPickerVisibility] = useState(true);
+
+  const onEmojiClick = (event, emojiObject) => {
+    let s = emojiString + emojiObject.emoji;
+    setEmojiString(s);
+  };
+
+  const onEmojiChange = (event) => {
+    setEmojiString(event.target.value);
+  };
+
+  const togglePicker = () => {
+    setPickerVisibility(!isPickerHidden);
+  };
+
   return (
     <>
       <Formik
@@ -50,6 +67,7 @@ const EmojiForm = () => {
         onSubmit={async (values) => {
           disableButton();
           let body = JSON.stringify(values);
+          console.log("body", body);
           await fetch(`${API_url}/newURL`, {
             method: "POST",
             ...params,
@@ -60,21 +78,22 @@ const EmojiForm = () => {
               if (response.ok) {
                 return response.json();
               } else {
-                let obj = {raw: "", emojis: ""}
-                switch(response.status) {
+                let obj = { raw: "", emojis: "" };
+                switch (response.status) {
                   case 429:
                     obj.message = "You are submitting too fast.";
                     break;
                   case 444:
-                    obj.message = "Oops, that emoji sequence is already in use...";
+                    obj.message =
+                      "Oops, that emoji sequence is already in use...";
                     break;
                   case 555:
                     obj.message = "The emoji string must have at least 1 emoji";
                     break;
                   default:
-                    throw Error(response.error)
+                    throw Error(response.error);
                 }
-                return obj
+                return obj;
               }
             })
             .then((data) => {
@@ -105,7 +124,26 @@ const EmojiForm = () => {
             </div>
             <div className="fieldContainer">
               <label htmlFor="emojis">emojis</label>
-              <Field name="emojis" type="text" placeholder="emojis here..." />
+              <Field
+                name="emojis"
+                type="text"
+                placeholder="emojis here..."
+                value={emojiString}
+                onChange={onEmojiChange}
+              />
+              <span>
+                <button
+                  onClick={togglePicker}
+                  style={{ padding: "0.05rem 0.2rem" }}
+                >
+                  <span aria-label="pick emoji" role="img">
+                    🙂
+                  </span>
+                </button>
+                <div id="emojiPicker">
+                  {!isPickerHidden && <Picker onEmojiClick={onEmojiClick} />}
+                </div>
+              </span>
               <ErrorMessage name="emojis">
                 {(msg) => <div className="errorMessage">{msg}</div>}
               </ErrorMessage>
